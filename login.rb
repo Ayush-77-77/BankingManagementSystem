@@ -9,7 +9,6 @@ require_relative 'withdraw_amount'
 require_relative 'deposit_amount'
 
 
-# start of a program
 email = "test@gmail.com"
 password = "test"
 if(EmployeeAuthentication.new.authentication?(email, password))

@@ -38,31 +38,31 @@ class Transactions
           if search_customer_details(customer_id)
             print "Enter the deposit amount : "
             deposit_amount = gets.chomp.to_f
-            deposit_amount(customer_id.to_i, deposit_amount)
+            deposit_amount(customer_id, deposit_amount)
           end
         end
     when '2'
       print "Enter the customer id : "
-      customer_id = gets.chomp.to_i
+      customer_id = gets.chomp
         if (validate_customer_id(customer_id))
           if search_customer_details(customer_id)
             print "Enter the withdrawal amount : "
             withdraw_amount = gets.chomp.to_f
-            withdraw_amount(customer_id.to_i, withdraw_amount)
+            withdraw_amount(customer_id, withdraw_amount)
           end
         end
     when '3'
       print "Enter the customer id : "
       customer_id = gets.chomp
       if (validate_customer_id(customer_id))
-        account_balance(customer_id.to_i)  if search_customer_details(customer_id)
+        account_balance(customer_id)  if search_customer_details(customer_id)
       end
     when '4'
       puts "-"*40
       print "Enter the customer id : "
       customer_id = gets.chomp
       if (validate_customer_id(customer_id))
-        transaction_history(customer_id.to_i)  if search_customer_details(customer_id)
+        transaction_history(customer_id)  if search_customer_details(customer_id)
       end
       puts "-"*40
     when '5'

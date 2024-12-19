@@ -1,7 +1,6 @@
 module AccountBalance
-
   def account_balance(customer_id)
-
+    customer_id = customer_id.to_i
     account_details = $customer_details[customer_id]  
     puts "-"*40      
     puts "Customer ID     : #{customer_id}"

@@ -52,7 +52,7 @@ end
 
   def account_number_generation()
     #https://stackoverflow.com/questions/34565/how-do-i-generate-a-random-10-digit-number-in-ruby
-    account_number = '%010d' % rand(10 ** 10)
+    account_number = '%010d' % rand(5 ** 10)
 
     #still need to work on validation of an account number
     return account_number

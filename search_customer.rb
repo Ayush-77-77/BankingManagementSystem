@@ -1,12 +1,13 @@
 module SearchCustomer
   def search_customer_details(customer_id)
+    customer_id = customer_id.to_i
     if $customer_details.empty?
       puts "-"*80
       puts "No account with customer id #{customer_id} registered yet."
       puts "-"*80
       return false
     else
-      account_details = $customer_details[customer_id.to_i]  
+      account_details = $customer_details[customer_id]  
       if account_details
           puts "User Found"
           puts "-"*40      
