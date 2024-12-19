@@ -21,7 +21,11 @@ class FundTransfer
       # Validate receiver's customer ID
       if $customer_details.key?(to_customer_id)
         receiver_details = search_customer_details(to_customer_id) # Store customer details
-        return if receiver_details == false
+        if sender_details == receiver_details
+          puts "Sender and Receiver details are same"
+          return
+        end
+        return if receiver_details == false 
 
         print "Enter the transfer amount: "
         transfer_amount = gets.chomp.to_f
