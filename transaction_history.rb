@@ -9,10 +9,16 @@ module TransactionHisotry
       puts "Account Number  : #{account_details[:account_number]}"
       puts "Full Name       : #{account_details[:full_name]}"
       puts "Account Balance : #{account_balance}"
-      puts "-" * 40
-      puts "-" * 40
-      puts "\tStatus\t|\tMessage\t|\tFrom\t|\tTo\t|\tAmount"
-      puts "-" * 40
+      puts "-" * 125
+      puts "-" * 125
+      print "     Status".ljust(30)
+      print "     Message".ljust(30)
+      print "     From".ljust(20)
+      print "     To".ljust(20)
+      print "     Amount".ljust(20)
+      # puts "    Status    |     Message    |    From    |   To   |   Amount   |     Time  "
+      puts
+      puts "-" * 125
 
       # Select transactions related to the given customer
       transactions_of_customer_id = $transactions.select do |transaction_id, transaction|
@@ -22,7 +28,14 @@ module TransactionHisotry
           puts "No transactions found for this customer."
       else
             transactions_of_customer_id.each do |transaction_id, values|
-              puts "\t#{values[:status]}\t|\t#{values[:message]}\t|\t#{values[:from_customer]}\t|\t#{values[:to_customer]}\t|\t#{values[:amount]}"
+              print "   #{values[:status]}".ljust(30)
+              print "   #{values[:message]}".ljust(30)
+              print "   #{values[:from_customer]}".ljust(20)
+              print "   #{values[:to_customer]}".ljust(20)
+              print "   #{values[:amount]}".ljust(20)
+              print "   #{values[:time]}".ljust(20)
+              puts
+              puts "-"*125
             end
       end
     else

@@ -1,18 +1,21 @@
 module WithdrawAmount
-  def withdraw_amount(customer_id, withdrawal_amount, to_customer = "self")
+  def withdraw_amount(customer_id, withdrawal_amount, to_customer = "Bank")
     customer_id = customer_id.to_i
     if (withdrawal_amount > 0)
       if $customer_account_balance[customer_id][:account_balance] >= withdrawal_amount
         # Update the account balance
         $customer_account_balance[customer_id][:account_balance] -= withdrawal_amount
-        puts "Withdrew #{withdrawal_amount} from account number #{customer_id}. New balance: #{$customer_account_balance[customer_id][:account_balance]}"
-        
+        puts "Withdrew #{withdrawal_amount} from account number #{$customer_account_balance[customer_id][:account_number]}. New balance: #{$customer_account_balance[customer_id][:account_balance]}"
+       
+        # https://stackoverflow.com/questions/11090451/format-the-date-using-ruby-on-rails
+        # withdraw_time = Time.now
         transaction_id = {
           from_customer: customer_id,
-          to_customer: to_customer, # No receiver for withdrawals
+          to_customer: to_customer,
           status: "Withdrawn",
-          message: "",
-          amount: withdrawal_amount
+          message: "Success",
+          amount: withdrawal_amount,
+          # time: withdraw_time
         }
         $transactions[$transaction_id] = transaction_id
         $transaction_id += 1
@@ -21,10 +24,11 @@ module WithdrawAmount
         # Log failed transaction
         transaction_id = {
           from_customer: customer_id,
-          to_customer: nil,
-          status: "Failed",
+          to_customer: to_customer,
+          status: "Withdraw Failed",
           message: "Insufficient balance",
-          amount: withdrawal_amount
+          amount: withdrawal_amount,
+          # time: withdraw_time
         }
         $transactions[$transaction_id] = transaction_id
         $transaction_id += 1

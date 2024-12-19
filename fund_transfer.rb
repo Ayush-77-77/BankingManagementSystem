@@ -28,8 +28,8 @@ class FundTransfer
 
         if transfer_amount <= 0
           puts "Transfer amount must be greater than zero."
-        elsif withdraw_amount(from_customer_id, transfer_amount,to_customer_id)
-          if deposit_amount(to_customer_id, transfer_amount,from_customer_id)
+        elsif withdraw_amount(from_customer_id, transfer_amount,$customer_account_balance[to_customer_id][:account_number])
+          if deposit_amount(to_customer_id, transfer_amount,$customer_account_balance[to_customer_id][:account_number])
             puts "Transfer successful!"
           else
             puts "Error in depositing the amount to the receiver."

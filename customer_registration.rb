@@ -1,4 +1,5 @@
 require_relative 'validate_customer_id'
+require 'time'
 $customer_details = {}
 $customer_account_balance = {}
 
@@ -26,7 +27,9 @@ def customer_registration
     address = gets.chomp
    # calling account number generation  
     account_number = account_number_generation()  
-
+    acc_creation_time = Time.now
+     # https://stackoverflow.com/questions/11090451/format-the-date-using-ruby-on-rails
+    acc_creation_time = Time.now
     customer_raw_data = {
       customer_id: customer_id,
       account_number: account_number,
@@ -35,7 +38,8 @@ def customer_registration
       phone: phone,
       aadhar_card: aadhar_card,
       pan_card: pan_card,
-      address: address
+      address: address,
+      acc_creation_time: acc_creation_time
     }
     
     $customer_details[customer_id] = customer_raw_data

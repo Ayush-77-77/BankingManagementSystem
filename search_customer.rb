@@ -19,6 +19,7 @@ module SearchCustomer
           puts "Aadhar Card    : #{account_details[:aadhar_card]}"
           puts "PAN Card       : #{account_details[:pan_card]}"
           puts "Address        : #{account_details[:address]}"
+          puts "Opening Date   :  #{account_details[:acc_creation_time]} "
           puts "-" * 40
           return customer_id  
       else
