@@ -1,6 +1,10 @@
 module EdgeCases
   
-
+  def is_name_correct?(name)
+    valid_name = /^[A-Za-z\s'-]+$/  # Matches letters, spaces, hyphens, and apostrophes
+    return valid_name.match?(name)
+  end
+  
   def is_phone_number_correct?(phone_number)
     # https://stackoverflow.com/questions/31808813/phone-number-validation-regex-in-rails
     valid_phone_number = /\A\d{10}\z/  
