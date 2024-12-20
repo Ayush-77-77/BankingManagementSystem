@@ -34,7 +34,7 @@ def customer_registration
         # pan_card = gets.chomp
         print "Full Address : "
         address = gets.chomp
-        raise "Address can not be empty or blank! Please try again " if is-address_corret?(address)
+        raise "Address can not be empty or blank! Please try again " if is_address_correct?(address)
          # calling account number generation  
         account_number = account_number_generation()  
         
