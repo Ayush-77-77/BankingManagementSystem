@@ -17,8 +17,9 @@ def customer_registration
     begin
         print "Full Name : "
         full_name = gets.chomp
-        print "Age : "
+        raise "Name can not be empty" unless is_name_correct?(full_name)
 
+        print "Age : "
         age = gets.chomp.to_i
         raise "Not a valid age! Please try again" unless is_age_correct?(age)
         
