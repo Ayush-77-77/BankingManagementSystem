@@ -10,7 +10,7 @@ class AllCustomerList
       puts "-"*40
       $customer_details.each do |customer_id, details|
         puts "Customer ID    : #{customer_id}"
-        puts "Account Number : #{details[:account_number]}"
+        puts "Account Number : #{$customer_account_details[customer_id][:account_number]}"
         puts "Full Name      : #{details[:full_name]}"
         puts "Age            : #{details[:age]}"
         # puts "Phone Number   : #{details[:phone]}"

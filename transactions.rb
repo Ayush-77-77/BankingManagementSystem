@@ -38,7 +38,10 @@ class Transactions
           if search_customer_details(customer_id)
             print "Enter the deposit amount : "
             deposit_amount = gets.chomp.to_f
-            deposit_amount(customer_id, deposit_amount)
+            if deposit_amount(customer_id, deposit_amount)
+              puts "Deposited #{deposit_amount} into account number #{$customer_account_details[customer_id.to_i][:account_number]}."
+              puts "New balance: #{$customer_account_details[customer_id.to_i][:account_balance]}"
+            end
           end
         end
     when '2'
@@ -48,7 +51,10 @@ class Transactions
           if search_customer_details(customer_id)
             print "Enter the withdrawal amount : "
             withdraw_amount = gets.chomp.to_f
-            withdraw_amount(customer_id, withdraw_amount)
+            if withdraw_amount(customer_id, withdraw_amount)
+               puts "Withdrew #{withdraw_amount} from account number #{$customer_account_details[customer_id.to_i][:account_number]}."
+               puts "New balance: #{$customer_account_details[customer_id.to_i][:account_balance]}"
+            end
           end
         end
     when '3'

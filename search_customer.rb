@@ -12,7 +12,7 @@ module SearchCustomer
           puts "User Found"
           puts "-"*40      
           puts "Customer ID    : #{customer_id}"
-          puts "Account Number : #{account_details[:account_number]}"
+          puts "Account Number : #{$customer_account_details[customer_id][:account_number]}"
           puts "Full Name      : #{account_details[:full_name]}"
           puts "Phone Number   : #{account_details[:phone]}"
           puts "Age            : #{account_details[:age]}"

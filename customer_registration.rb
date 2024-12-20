@@ -1,8 +1,8 @@
 require_relative 'validate_customer_id'
 require_relative 'edge_cases'
 require 'time'
-  $customer_details = {}
-$customer_account_balance = {}
+$customer_details = {}
+$customer_account_details = {}
 
 class CustomerRegistration
 include ValidateCustomerId 
@@ -45,7 +45,6 @@ def customer_registration
         acc_creation_time = Time.now
         customer_raw_data = {
           customer_id: customer_id,
-          account_number: account_number,
           full_name: full_name,
           age: age,
           phone: phone_number,
@@ -56,7 +55,8 @@ def customer_registration
         }
         
         $customer_details[customer_id] = customer_raw_data
-        $customer_account_balance[customer_id]={
+        $customer_account_details[customer_id]={
+          customer_id: customer_id,
           account_number: account_number,
           account_balance: 0
         }

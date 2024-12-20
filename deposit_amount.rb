@@ -3,8 +3,7 @@ module DepositAmount
     customer_id = customer_id.to_i
     if deposit_amount > 0
       # Update the account balance
-      $customer_account_balance[customer_id][:account_balance] += deposit_amount
-      puts "Deposited #{deposit_amount} into account number #{$customer_account_balance[customer_id][:account_number]}. New balance: #{$customer_account_balance[customer_id][:account_balance]}"
+      $customer_account_details[customer_id][:account_balance] += deposit_amount
       
       # deposit time
       # deposit_time = Time.now
@@ -20,8 +19,11 @@ module DepositAmount
       }
       $transactions[$transaction_id] = transaction_id
       $transaction_id += 1
+
+      return true
     else
       puts "Deposit amount must be greater than zero."
+      return false
     end
   end
  

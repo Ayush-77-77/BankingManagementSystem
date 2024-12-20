@@ -3,10 +3,11 @@ module TransactionHisotry
     customer_id = customer_id.to_i
     if $customer_details.key?(customer_id)
       account_details = $customer_details[customer_id]
-      account_balance = $customer_account_balance[customer_id][:account_balance]
+      account_number = $customer_account_details[customer_id][:account_number]
+      account_balance = $customer_account_details[customer_id][:account_balance]
       puts "-" * 40
       puts "Customer ID     : #{customer_id}"
-      puts "Account Number  : #{account_details[:account_number]}"
+      puts "Account Number  : #{account_number}"
       puts "Full Name       : #{account_details[:full_name]}"
       puts "Account Balance : #{account_balance}"
       puts "-" * 125

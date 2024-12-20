@@ -40,22 +40,22 @@ class DummyData
     ]
     dummy_account_details = [{
           customer_id: 1234,
-          account_number: 00023544455,
+          account_number: 10023544455,
           account_balance: 0
         },
         {
           customer_id: 5678,
-          account_number: 00045566555,
+          account_number: 10045566555,
           account_balance: 0
         },
         {
           customer_id: 9012,
-          account_number: 00045555457,
+          account_number: 10045555457,
           account_balance: 0
         },
         {
           customer_id: 3456,
-          account_number: 00025563565,
+          account_number: 10025563565,
           account_balance: 0
         },
       ]
@@ -65,7 +65,6 @@ class DummyData
     dummy_customer_details.each do |customer|
       customer_raw_data = {
         customer_id: customer[:customer_id],
-        account_number: customer[:account_number],
         full_name: customer[:full_name],
         age: customer[:age],
         phone: customer[:phone],
@@ -79,10 +78,11 @@ class DummyData
     end
     dummy_account_details.each do |account|
       account_raw_data = {
+        customer_id:  account[:customer_id],
         account_number: account[:account_number],
         account_balance: account[:account_balance]
       }
-      $customer_account_balance[account[:customer_id]] = account_raw_data
+      $customer_account_details[account[:customer_id]] = account_raw_data
     end
   end
 end
