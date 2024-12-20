@@ -20,5 +20,8 @@ module EdgeCases
     valid_aadhar = /^\d{12}$/  # Matches 12 digits
     return valid_aadhar.match?(aadhar)
   end
-  
+  def is_address_correct?(address)
+    return address.strip.empty?
+  end
+
 end

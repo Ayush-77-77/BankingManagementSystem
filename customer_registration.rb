@@ -18,24 +18,29 @@ def customer_registration
         print "Full Name : "
         full_name = gets.chomp
         print "Age : "
-        
+
         age = gets.chomp.to_i
-        raise "Not a valid age" unless is_age_correct?(age)
+        raise "Not a valid age! Please try again" unless is_age_correct?(age)
         
         print "Phone number : "
         phone_number = gets.chomp
-        raise "Not a valide phone number" unless is_phone_number_correct?(phone_number)
+        raise "Not a valide phone number! Please try again" unless is_phone_number_correct?(phone_number)
 
         print "Aadhar Card Number : "
         aadhar_card = gets.chomp
-        print "Pan Card Number : "
-        pan_card = gets.chomp
+        raise "Not a valid Aadhar number! Please try again" unless is_aadhar_correct?(aadhar_card)
+        # print "Pan Card Number : "
+        # pan_card = gets.chomp
         print "Full Address : "
         address = gets.chomp
+        raise "Address can not be empty or blank! Please try again " if is-address_corret?(address)
          # calling account number generation  
         account_number = account_number_generation()  
-        acc_creation_time = Time.now
+        
         # https://stackoverflow.com/questions/11090451/format-the-date-using-ruby-on-rails
+        
+        acc_creation_time = Time.now
+
         acc_creation_time = Time.now
         customer_raw_data = {
           customer_id: customer_id,
@@ -44,7 +49,7 @@ def customer_registration
           age: age,
           phone: phone_number,
           aadhar_card: aadhar_card,
-          pan_card: pan_card,
+          # pan_card: pan_card,
           address: address,
           acc_creation_time: acc_creation_time
         }

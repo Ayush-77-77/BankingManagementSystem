@@ -17,7 +17,7 @@ module SearchCustomer
           puts "Phone Number   : #{account_details[:phone]}"
           puts "Age            : #{account_details[:age]}"
           puts "Aadhar Card    : #{account_details[:aadhar_card]}"
-          puts "PAN Card       : #{account_details[:pan_card]}"
+          # puts "PAN Card       : #{account_details[:pan_card]}"
           puts "Address        : #{account_details[:address]}"
           puts "Opening Date   :  #{account_details[:acc_creation_time]} "
           puts "-" * 40
