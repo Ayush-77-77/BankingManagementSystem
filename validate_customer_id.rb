@@ -12,7 +12,7 @@ module ValidateCustomerId
     isValid # return value
   end
   
-  def validate_customer_id_already_exist(customer_id)
+  def customer_id_already_exist?(customer_id)
       isValid = false
       begin
         customer_id = Integer(customer_id)
