@@ -9,6 +9,8 @@ class DashBoard
   include ValidateCustomerId
   def dash_board_services
     while(true)
+      puts "------WELCOME TO DASH BOARD-------"
+
       puts "-"*40
       puts "1. Customer Registration"
       puts "2. All Customer list"

@@ -1,7 +1,7 @@
 require_relative 'validate_customer_id'
 require_relative 'edge_cases'
 require 'time'
-$customer_details = {}
+  $customer_details = {}
 $customer_account_balance = {}
 
 class CustomerRegistration
