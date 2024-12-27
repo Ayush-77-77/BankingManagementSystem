@@ -23,6 +23,7 @@ print "\n\nEnter Login Email : "
 email = gets.chomp
 print "Passowrd : "
 password = gets.chomp
+
 if(EmployeeAuthentication.new.authentication?(email, password))
  DummyData.new.dummy_data()
  DashBoard.new.dash_board_services()
