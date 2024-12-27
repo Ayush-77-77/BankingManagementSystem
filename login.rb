@@ -8,7 +8,7 @@ require_relative 'withdraw_amount'
 require_relative 'deposit_amount'
 require_relative 'dummy_data'
 
-class EmployeeAuthentication
+class Login
   def authentication?(email, password)
     
     if (email == "test@gmail.com" && password == "test")
@@ -24,7 +24,7 @@ email = gets.chomp
 print "Passowrd : "
 password = gets.chomp
 
-if(EmployeeAuthentication.new.authentication?(email, password))
+if(Login.new.authentication?(email, password))
  DummyData.new.dummy_data()
  DashBoard.new.dash_board_services()
 else
