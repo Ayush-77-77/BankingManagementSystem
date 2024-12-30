@@ -37,7 +37,7 @@ class TestWithdrawAmount < Minitest::Test
 
   def test_invalid_withdrawal_amount
     withdraw_module = Object.new
-    withdraw_module.extend(WithdrawAmountu)
+    withdraw_module.extend(WithdrawAmount)
 
     # Test withdrawal with invalid amount (zero or negative)
     result = withdraw_module.withdraw_amount(1, 0)
